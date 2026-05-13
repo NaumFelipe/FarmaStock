@@ -78,20 +78,20 @@ public void registrarSaida(String nome, int quantidade) {
     Produto p = buscarPorNome(nome);
 
     if (p == null) {
-        System.out.println("❌ Produto '" + nome + "' não encontrado.");
+        System.out.println("Produto '" + nome + "' não encontrado.");
         return;
     }
 
     // Verifica se tem estoque suficiente antes de subtrair
     if (quantidade > p.getQuantidade()) {
-        System.out.println("⚠️ Estoque insuficiente! Disponível: " 
+        System.out.println("Estoque insuficiente! Disponível: " 
                             + p.getQuantidade());
         return;
     }
 
     // Pega a quantidade atual e subtrai a saída
     p.setQuantidade(p.getQuantidade() - quantidade);
-    System.out.println("✅ Saída registrada! Nova quantidade de '" 
+    System.out.println("Saída registrada! Nova quantidade de '" 
                         + nome + "': " + p.getQuantidade());
 }
 }
